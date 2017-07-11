@@ -51,7 +51,7 @@ trainData.ref().on("child_added", function (childSnapshot) {
   var tName = childSnapshot.val().name;
   var tDestination = childSnapshot.val().destination;
   var tFrequency = childSnapshot.val().frequency;
-  var tFirstTrain = childSnapshot.val().firstTrainUnix;
+  var tFirstTrain = childSnapshot.val().firstTrain;
   var differenceTimes = moment().diff(moment.unix(tFirstTrain), "minutes");
   var tRemainder = moment().diff(moment.unix(tFirstTrain), "minutes") % tFrequency;
   var tMinutes = tFrequency - tRemainder;
